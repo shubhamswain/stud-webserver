@@ -23,7 +23,7 @@ def split_path(path):
 
 
 #Folder Operations
-@method_decorator(login_required, name="dispatch")
+@method_decorator(login_required(login_url="/login/"), name="dispatch")
 class FolderView(ListView):
 	template_name = "tau/folder.html"
 	queryset = Drive.objects.none() #Just to keep django happy

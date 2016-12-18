@@ -115,6 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
+AUTH_USER_MODEL = 'main.MyUser'
 
 LANGUAGE_CODE = 'en-us'
 
@@ -126,11 +127,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTHENTICATION_BACKENDS = (
+    'main.auth.WebmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = '/static/'
 LOGIN_URL = '/main/login/'
 LOGIN_REDIRECT_URL = '/main/'
-MEDIA_ROOT = '/home/raghuram/Workspace/WebDevelopment/Django/stud/stud/media/'
+MEDIA_ROOT = '/Users/Shubham/Desktop/TEMP'
 MEDIA_URL = '/media/'

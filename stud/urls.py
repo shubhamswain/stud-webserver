@@ -19,9 +19,10 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^main/', include('main.urls')), 
-    url(r'^chrono/', include('chrono.urls')),
-    url(r'^tau/', include('tau.urls')),
+    url(r'^', include('main.urls')),
+    #url(r'^main/', include('main.urls')),
+    url(r'^chrono/', include('chrono.urls'), name='chrono'),
+    url(r'^tau/', include('tau.urls'), name='tau'),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #THE ABOVE ONLY WORKS IN DEVELOPMENT
